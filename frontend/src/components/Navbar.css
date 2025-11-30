@@ -1,0 +1,150 @@
+:root {
+  --primary: #0b72ff;
+  --accent: #6c63ff;
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --radius: 10px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+/* Container */
+.nav-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand */
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+}
+
+.logo-mark {
+  height: 38px;
+  width: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 8px 10px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #111;
+}
+
+.nav-links .active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* Right Section */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Cart Button */
+.cart-btn {
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.cart-count {
+  background: var(--primary);
+  color: white;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 12px;
+  position: absolute;
+  top: -6px;
+  right: -14px;
+}
+
+/* Login */
+.login-btn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Logged-in: username + logout */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-weight: 600;
+  color: #111;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #f3f4f6;
+}

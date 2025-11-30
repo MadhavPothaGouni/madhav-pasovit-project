@@ -1,0 +1,36 @@
+.home-container {
+  text-align: center;
+  padding: 40px;
+  background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.home-title {
+  font-size: 62px;
+  font-weight: 700;
+  font-style: inherit;
+  margin-bottom: 20px;
+  color: #eee9e9;
+  margin-top: 100px;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 22px 34px;
+  margin-top: 40px;
+  background: #4a6cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 26px;
+  font-weight: 900;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home-button:hover {
+  background: #3858e0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}

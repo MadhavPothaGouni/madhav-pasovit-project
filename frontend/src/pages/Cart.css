@@ -1,0 +1,76 @@
+/* Cart container */
+.cart-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.cart-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Empty cart */
+.cart-empty {
+  font-size: 18px;
+  text-align: center;
+  color: #777;
+}
+
+/* List of cart items */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* Total price */
+.cart-total {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+/* Button group */
+.cart-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Primary Checkout Button */
+.btn-primary {
+  padding: 10px 20px;
+  background: #4a6cff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #3957e0;
+  transform: translateY(-2px);
+}
+
+/* Clear button */
+.btn-clear {
+  padding: 10px 20px;
+  background: #e7e7e7;
+  color: #444;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-clear:hover {
+  background: #d5d5d5;
+  transform: translateY(-2px);
+}

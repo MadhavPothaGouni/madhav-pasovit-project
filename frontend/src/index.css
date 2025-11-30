@@ -1,0 +1,6 @@
+body { margin:0; font-family: Arial; background:#f8fafc; }
+.container { max-width:1200px; margin:auto; padding:20px; }
+.nav { background:white; padding:12px 20px; box-shadow:0 1px 4px rgba(0,0,0,.08); display:flex; justify-content:space-between; }
+.grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+.card { background:white; padding:12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+.btn { background:#0078ff; color:white; padding:8px 14px; border:none; border-radius:6px; cursor:pointer; }
