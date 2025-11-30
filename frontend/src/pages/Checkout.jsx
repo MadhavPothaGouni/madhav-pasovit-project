@@ -11,15 +11,15 @@ export default function Checkout() {
 
   const placeOrder = async () => {
     try {
-      // backend expects to use server-side cart tied to authenticated user
+      
       const res = await api.post("/orders");
       clear();
-      // navigate to order success page with returned id if provided
+     
       const orderId = res?.data?.orderId || res?.data?.order?._id || "";
       nav(`/order/${orderId}`);
     } catch (err) {
       console.error("Place order error:", err);
-      // friendly message
+    
       alert("Place order failed. Make sure you are logged in and your cart is not empty.");
     }
   };

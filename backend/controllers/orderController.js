@@ -9,7 +9,7 @@ exports.createOrder = async (req, res, next) => {
     const userId = req.user?.id;
     if (!userId) return res.status(401).json({ message: 'Login required' });
 
-    // items can come from server cart or request body
+  
     let cart = await Cart.findOne({ user: userId }).populate('items.product');
     if (!cart || cart.items.length === 0) return res.status(400).json({ message: 'Cart is empty' });
 
@@ -31,12 +31,12 @@ exports.createOrder = async (req, res, next) => {
       status: 'Processing'
     });
 
-    // optional: decrement stock (simple)
+    
     for (const it of cart.items) {
       await Product.findByIdAndUpdate(it.product._id, { $inc: { stock: -it.qty } });
     }
 
-    // clear cart
+    
     cart.items = [];
     await cart.save();
 

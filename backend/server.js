@@ -3,8 +3,6 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const connectDB = require("./config/db");
-
-// routes
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
@@ -14,15 +12,12 @@ const app = express();
 
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 
-// connect DB
 connectDB();
 
-// body + cookies
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// CORS
 app.use(
   cors({
     origin: CLIENT_URL,
@@ -32,18 +27,12 @@ app.use(
   })
 );
 
-
-
-// routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
-
-// health
 app.get("/", (req, res) => res.send("API is running"));
 
-// error handler
 app.use((err, req, res, next) => {
   console.error(err.stack || err);
   res.status(err.status || 500).json({ message: err.message || "Server error" });

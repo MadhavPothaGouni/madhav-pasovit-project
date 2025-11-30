@@ -1,15 +1,8 @@
-// src/context/AuthContext.jsx
 import React, { useState, useEffect } from "react";
-// AuthContext itself lives in authContextValue.js
 import AuthContextDefault from "./authContextValue";
 import api from "../services/api";
-
-// Re-export the context object under the same name your app expects
 export const AuthContext = AuthContextDefault;
 
-// Named export + default export for the Provider so existing imports work:
-// import { AuthProvider } from './context/AuthContext'
-// import AuthProvider from './context/AuthContext'
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
@@ -53,5 +46,4 @@ export function AuthProvider({ children }) {
   );
 }
 
-// default export as well (keeps older default-import patterns safe)
 export default AuthProvider;

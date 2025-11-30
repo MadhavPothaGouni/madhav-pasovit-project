@@ -1,4 +1,3 @@
-// backend/controllers/authController.js
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
@@ -8,13 +7,13 @@ const createToken = (user) =>
     expiresIn: '7d',
   });
 
-// cookie options used for local dev (sameSite: 'lax' + secure:false)
+
 const cookieOptions = {
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production', // true on prod (HTTPS)
-  sameSite: 'lax', // OK when frontend and backend look like same-origin via proxy
+  secure: process.env.NODE_ENV === 'production', 
+  sameSite: 'lax', 
   path: '/',
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  maxAge: 7 * 24 * 60 * 60 * 1000, 
 };
 
 exports.register = async (req, res, next) => {
@@ -53,7 +52,7 @@ exports.login = async (req, res, next) => {
     console.log('User found:', Boolean(user));
     if (!user) return res.status(400).json({ message: 'Invalid credentials' });
 
-    console.log('Stored password (hashed):', user.password.slice(0, 30) + '...'); // don't print full hash in prod
+    console.log('Stored password (hashed):', user.password.slice(0, 30) + '...'); 
     const isMatch = await bcrypt.compare(password, user.password);
     console.log('bcrypt compare result:', isMatch);
 
@@ -69,7 +68,7 @@ exports.login = async (req, res, next) => {
 
 
 exports.logout = (req, res) => {
-  // clear cookie with same options to ensure removal
+  
   res.clearCookie('token', { path: '/', sameSite: 'lax' });
   res.json({ message: 'Logged out' });
 };

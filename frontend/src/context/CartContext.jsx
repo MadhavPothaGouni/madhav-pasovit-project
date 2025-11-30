@@ -1,16 +1,9 @@
-// src/context/CartContext.jsx
 import React, { useState, useEffect, useContext } from "react";
 import CartContextDefault from "./cartContextValue";
 import api from "../services/api";
-import { AuthContext as AuthCtxFromValue } from "./authContextValue"; // read user if needed
-
-// Re-export the context object under the expected name
+import { AuthContext as AuthCtxFromValue } from "./authContextValue"; 
 export const CartContext = CartContextDefault;
-
-// Named export + default export for the Provider so existing imports work
 export function CartProvider({ children }) {
-  // use the actual AuthContext object (consumers import AuthContext from authContextValue)
-  // but we re-exported AuthContext from AuthContext.jsx as well, so both import styles work.
   const authCtx = useContext(AuthCtxFromValue);
   const user = authCtx?.user ?? null;
 

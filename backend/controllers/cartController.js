@@ -3,7 +3,7 @@ const Cart = require('../models/Cart');
 exports.getCart = async (req, res, next) => {
   try {
     const userId = req.user?.id;
-    if (!userId) return res.json({ items: [] }); // guest: frontend localStorage
+    if (!userId) return res.json({ items: [] }); 
     const cart = await Cart.findOne({ user: userId }).populate('items.product');
     res.json(cart || { items: [] });
   } catch (err) { next(err); }
@@ -32,7 +32,7 @@ exports.addToCart = async (req, res, next) => {
 exports.updateCart = async (req, res, next) => {
   try {
     const userId = req.user?.id;
-    const { items } = req.body; // expect array of {productId,size,qty}
+    const { items } = req.body; 
     if (!userId) return res.status(401).json({ message: 'Login to update cart' });
     let cart = await Cart.findOne({ user: userId });
     if (!cart) cart = await Cart.create({ user: userId, items: [] });

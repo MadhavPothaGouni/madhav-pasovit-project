@@ -1,8 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const Product = require("./models/Product");
-
-// Product list
 const products = [
   { name: "Classic White Tee", description: "Soft cotton t-shirt", price: 499, image: "https://picsum.photos/seed/tee1/600/600", category: "Men", sizes: ["S","M","L","XL"], stock: 50 },
   { name: "Black Hoodie", description: "Warm cotton hoodie", price: 1299, image: "https://picsum.photos/seed/hood1/600/600", category: "Men", sizes: ["M","L","XL"], stock: 30 },
@@ -26,7 +24,6 @@ const products = [
   { name: "Wrap Scarf", description: "Cozy scarf", price: 399, image: "https://picsum.photos/seed/scarf1/600/600", category: "Accessories", sizes: [], stock: 100 }
 ];
 
-// Seed logic
 const importData = async () => {
   try {
     await connectToDB();
@@ -42,7 +39,6 @@ const importData = async () => {
   }
 };
 
-// Connect to DB
 const connectToDB = async () => {
   const uri = process.env.MONGO_URI;
 
